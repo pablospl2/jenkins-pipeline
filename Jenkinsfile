@@ -1,7 +1,7 @@
 def CONTAINER_NAME="jenkins-pipeline"
 def CONTAINER_TAG="latest"
 def DOCKER_HUB_USER="krajewskim""
-def HTTP_PORT="8090"
+def HTTP_PORT="80"
 
 node {
 
@@ -68,6 +68,6 @@ def pushToImage(containerName, tag, dockerUser, dockerPassword){
 
 def runApp(containerName, tag, dockerHubUser, httpPort){
     sh "docker pull $dockerHubUser/$containerName"
-    sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
+    sh "docker run -d --rm -p 8090:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
     echo "Application started on port: ${httpPort} (http)"
 }
