@@ -1,6 +1,6 @@
 def CONTAINER_NAME="jenkins-pipeline"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="ppiotrowskiYameo"
+def DOCKER_HUB_USER="yppiotrowski"
 def HTTP_PORT="80"
 
 node {
